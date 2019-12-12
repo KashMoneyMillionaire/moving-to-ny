@@ -1,121 +1,210 @@
 <html>
 
 <head>
-  <title>NY Moving Sales</title>
-	
-	<link rel="stylesheet" href="styles.css">
+    <title>NY Moving Sales</title>
 </head>
 
 <body>
-	
-<style>
-* {
-  box-sizing: border-box;
-}
-body {
-  background-color: #f5f5f5;
-  margin: 0 auto; 
-  max-width: 60em;
-  line-height: 1.3;
-}
-ul, li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-img {
-  width: 100%;
-}
-h2 {
-  margin-top: 0;
-  margin-bottom: 0.4em;
-}
 
-/*Flex items*/
-.list {
-  display: flex;
-  flex-wrap: wrap;
-}
-.list-item {
-	display: flex; 
-  padding: 0.5em;
-	width: 100%;
-}
-@media all and (min-width: 40em) {
-  .list-item {
-    width: 50%;
-  }
-}
-@media all and (min-width: 60em) {
-  .list-item {
-    width: 33.33%;
-  }
-}
-.list-content {
-	background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  padding: 1em;
-	width: 100%;
-}
-.list-content p {
-	flex: 1 0 auto;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-	</style>
-	
-<ul class="list">
-  <li class="list-item">
-    <div class="list-content">
-      <h2>Title</h2>
-      <img src="http://baconmockup.com/250/200" alt="" />
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, eveniet.</p>
-      <a href="">Link</a>
-    </div>
-  </li>
-	
-	 <li class="list-item">
-    <div class="list-content">
-      <h2>Title</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, vel, quia. Non nostrum, consectetur ipsum doloribus enim maiores a laudantium, odio vel blanditiis id ea dolorum expedita fugit incidunt commodi.</p>
-      <a href="">Link</a>
-    </div>
-  </li>
-  
-  <li class="list-item">
-    <div class="list-content">
-      <h2>Title</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, vel, quia. Non nostrum, consectetur ipsum doloribus enim maiores a laudantium.</p>
-      <a href="">Link</a>
-    </div>
-  </li>
-  
-  <li class="list-item">
-    <div class="list-content">
-      <h2>Title</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur optio ipsa fuga vel repudiandae impedit illum delectus nihil error animi nobis quaerat quidem, amet, praesentium aspernatur inventore numquam! Totam, dolorem inventore reprehenderit, culpa obcaecati!</p>
-      <a href="">Link</a>
-    </div>
-  </li>
-  
-  <li class="list-item">
-    <div class="list-content">
-      <h2>Title</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo veniam tempore vero velit deleniti corporis recusandae placeat eum repellendus modi architecto, iste, numquam nulla, praesentium fuga soluta eos consequatur sequi expedita! Ea aspernatur explicabo optio ducimus officia blanditiis voluptas possimus veniam maxime!</p>
-      <a href="">Link</a>
-    </div>
-  </li>
+        body {
+            background-color: #f5f5f5;
+            margin: 0 auto;
+            max-width: 60em;
+            line-height: 1.3;
+        }
 
-  
-    <li class="list-item">
-    <div class="list-content">
-      <h2>Title</h2>
-      <img src="http://baconmockup.com/250/200" alt="" />
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum molestiae esse dolore corporis velit fugiat ipsam tempore optio dicta. Magnam iusto facere, maxime! Praesentium quo laborum, deserunt adipisci. Ipsam officia delectus repudiandae, aperiam magnam blanditiis fuga similique.</p>
-      <a href="">Link</a>
-    </div>
-  </li>
-</ul>
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 0.4em;
+        }
+
+        /*Flex items*/
+        .list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .list-item {
+            display: flex;
+            padding: 0.5em;
+            width: 100%;
+        }
+
+        @media all and (min-width: 40em) {
+            .list-item {
+                width: 50%;
+            }
+        }
+
+        @media all and (min-width: 60em) {
+            .list-item {
+                width: 33.33%;
+            }
+        }
+
+        .list-content {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            padding: 1em;
+            width: 100%;
+        }
+
+        .list-content p {
+            flex: 1 0 auto;
+        }
+    </style>
+
+    <ul class="list"
+        id="list">
+
+    </ul>
 </body>
+
+
+<script>
+
+    const template = `<li class="list-item">
+            <div class="list-content">
+                <h2>Title</h2>
+                <img src="img_src"
+                     alt="" />
+                <p>price</p>
+                <a href="item_link" target="_blank">View Item Here!</a>
+            </div>
+        </li>`
+
+    const items2 = [
+        {
+            "title": "West Elm Urban 4-Piece Chaise Sectional",
+            "price": "$3000",
+            "img": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-0/c43.0.260.260a/p261x260/79357451_10215783098477040_2771742408440807424_o.jpg?_nc_cat=100&_nc_ohc=6ZkSOU6M3dgAQkZNv0MKBrkz693wEaGnK3RyT_5wC1ck4BrWhMJz2L4SA&_nc_ht=scontent-dfw5-2.xx&oh=275556d606e2b7abe96a56a1e423d78b&oe=5EB43508",
+            "url": "https://www.facebook.com/marketplace/item/2602650893115026/"
+        },
+        {
+            "title": "World Market Tufted Ottoman Coffee Table",
+            "price": "$100",
+            "img": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-0/c0.169.1504.1504a/s261x260/79477742_10215783096276985_2030904397201932288_o.jpg?_nc_cat=108&_nc_ohc=IJHHTL4dlEMAQl2Ve6RT5J8Zgmt3d6DqzoCUkAZKBBeDWybahFbSBGoGA&_nc_ht=scontent-dfw5-2.xx&oh=0e8959d877d6d775445be77f448a4cac&oe=5E836EB2",
+            "url": "https://www.facebook.com/marketplace/item/578294576277915/"
+        },
+        {
+            "title": "End Table",
+            "price": "$100",
+            "img": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-0/c0.169.1504.1504a/s261x260/79271415_10215783091756872_3886799361107034112_o.jpg?_nc_cat=104&_nc_ohc=mhTPE81K0cYAQkx_VVfAgUkNivGzH5g2oZ6MiVRdQvp_FsWvrl_VmQlJA&_nc_ht=scontent-dfw5-2.xx&oh=555aa38d4877b80c66f54f5c30a2901c&oe=5E87D5D8",
+            "url": "https://www.facebook.com/marketplace/item/580962932664030/"
+        },
+        {
+            "title": "TV Stand Black-Brown w/ 4x2 Open Shelves",
+            "price": "$50",
+            "img": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-0/c43.0.260.260a/p261x260/80345544_10215783090196833_6713047120737206272_o.jpg?_nc_cat=105&_nc_ohc=9lGid0wHqlwAQk1gH9gIUoGRcJSmzfre31Wd4Ka3AwVerfokMCuo0VH7Q&_nc_ht=scontent-dfw5-2.xx&oh=c537031daf5e0c1a4687ee35a3ee5776&oe=5E690BC7",
+            "url": "https://www.facebook.com/marketplace/item/1233297236870423/"
+        },
+        {
+            "title": "Bar and Counter Stools",
+            "price": "$150",
+            "img": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-0/c0.169.1504.1504a/s261x260/74602856_10215783082676645_7160272689356079104_o.jpg?_nc_cat=104&_nc_ohc=cc4MbIfuoZkAQkR8Lj42bhIkeDRE7R5ZNy30n_ZKpHxJLA2Pw2WeLH3nA&_nc_ht=scontent-dfw5-2.xx&oh=c4fa755bb05ef22a87e085dae61bfad2&oe=5E668C97",
+            "url": "https://www.facebook.com/marketplace/item/2533242853618336/"
+        },
+        {
+            "title": "World Market Oversized Living Room Chairs",
+            "price": "$200",
+            "img": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-0/c0.169.1504.1504a/s261x260/79033824_10215783080196583_6477709472994164736_o.jpg?_nc_cat=105&_nc_ohc=abrruTQ9NNwAQmjzzRz01OaemN_WkLMdHY1VdiZ5qyLTYTkxdPteN12dQ&_nc_ht=scontent-dfw5-2.xx&oh=ccafd1f9ca56e5c1060448700e113f6b&oe=5E6657EC",
+            "url": "https://www.facebook.com/marketplace/item/443700603248313/"
+        },
+        {
+            "title": "Dining Room Table for 4 w/ Stool Chairs",
+            "price": "$100",
+            "img": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-0/c0.169.1504.1504a/s261x260/80056815_10215783073596418_323093042305171456_o.jpg?_nc_cat=108&_nc_ohc=bWOYN0ey3GoAQm6GmcWRxF9N8O0EWQiVRVbgi9A045GicowUiPK9fbV7w&_nc_ht=scontent-dfw5-2.xx&oh=73d999819452e548542b456ff396a6d8&oe=5EB34DFA",
+            "url": "https://www.facebook.com/marketplace/item/1394937267326064/"
+        },
+        {
+            "title": "Green Canvas Print",
+            "price": "$45",
+            "img": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-0/c0.169.1504.1504a/s261x260/79192241_10215783069356312_2383542377802366976_o.jpg?_nc_cat=104&_nc_ohc=c6EDFtRrMP8AQnn7XFGMy8kxM-_moBmkMdaOexaAlvmm6EYXl__p1uUEg&_nc_ht=scontent-dfw5-2.xx&oh=519eab4d22fba5604554c7b00e39e0bd&oe=5E715C16",
+            "url": "https://www.facebook.com/marketplace/item/453519495581156/"
+        },
+        {
+            "title": "Blue Canvas Print",
+            "price": "$45",
+            "img": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-0/c0.169.1504.1504a/s261x260/73220933_10215783066796248_1304618147478765568_o.jpg?_nc_cat=102&_nc_ohc=0e2zicihCVkAQnzrtz8EOkmCBd8PzXiEkf3HSTGEgB5vOxR_okndatftg&_nc_ht=scontent-dfw5-2.xx&oh=d378bf09dd9df9d02d03ac194f1d2bff&oe=5E6C35F8",
+            "url": "https://www.facebook.com/marketplace/item/877457599335828/"
+        },
+        {
+            "title": "Cuisinart Convection Toaster Oven",
+            "price": "$75",
+            "img": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-0/c43.0.260.260a/p261x260/80240842_10215783063796173_3290601971358105600_o.jpg?_nc_cat=102&_nc_ohc=gprBGf11GmEAQkAv2NnsE-pOfNOT_m_stp97QdYFGMTL7baRXM9muOYWw&_nc_ht=scontent-dfw5-2.xx&oh=ac980160fb0b8f7bce14800944550018&oe=5E796258",
+            "url": "https://www.facebook.com/marketplace/item/492459354957643/"
+        },
+        {
+            "title": "King Upholstered Platform Bed with End Tables",
+            "price": "$500",
+            "img": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-0/c43.0.260.260a/p261x260/79138699_10215783060396088_8157891698412748800_o.jpg?_nc_cat=111&_nc_ohc=Z8g7P00gxhYAQk1qEznX8-YiiOf3Yqp89QAg6NJy9-o-MRGN1IY03tZBw&_nc_ht=scontent-dfw5-2.xx&oh=cf76f6310e809ed9c29b13cce5f40a12&oe=5E715746",
+            "url": "https://www.facebook.com/marketplace/item/1013516778984376/"
+        },
+        {
+            "title": "TV Stand",
+            "price": "$200",
+            "img": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-0/c43.0.260.260a/p261x260/80382666_10215783057636019_9160626086533398528_o.jpg?_nc_cat=108&_nc_ohc=zufCUN7ncbIAQm1igExof7Eqe6QfFvmWHECarssvE694hnTkMkWOrWh1g&_nc_ht=scontent-dfw5-2.xx&oh=ff7627e6cf25412340a48da1ef6ff29b&oe=5E6A74C6",
+            "url": "https://www.facebook.com/marketplace/item/1461367330680375/"
+        },
+        {
+            "title": "2x2 Black-Brown Book Shelves",
+            "price": "$25",
+            "img": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-0/c0.169.1504.1504a/s261x260/79093233_10215783052355887_9171239075275866112_o.jpg?_nc_cat=104&_nc_ohc=65yntpA_0XUAQnmNEpgErzGJkh4LAjCWhSSdUwMuAiqqku-3HYqz-VPYg&_nc_ht=scontent-dfw5-2.xx&oh=e34c2939912dceb6953879ff788093d9&oe=5E8404E2",
+            "url": "https://www.facebook.com/marketplace/item/2456016348059245/"
+        },
+        {
+            "title": "Oversized Reading Chair",
+            "price": "$200",
+            "img": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-0/c0.169.1504.1504a/s261x260/79920883_10215783048635794_3390118644234059776_o.jpg?_nc_cat=110&_nc_ohc=4Qk5ZsJSiH4AQkSMuEYyWYAyWqTiDbmWZajvPqdqisNe75zF3FBAtceaw&_nc_ht=scontent-dfw5-2.xx&oh=5982630341949def7423ab16486c76dd&oe=5E841A5E",
+            "url": "https://www.facebook.com/marketplace/item/763355417510063/"
+        },
+        {
+            "title": "32\" Vizio LED 1080p HD Smart TV",
+            "price": "$150",
+            "img": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-0/s261x260/78892902_10215783042915651_3070410538669309952_n.jpg?_nc_cat=102&_nc_ohc=tHgJJjmh5rkAQlLsQMae_Q9F_97oLt6D52YspLFjX94rcm_ovdvxDdL1g&_nc_ht=scontent-dfw5-2.xx&oh=0517e8d0ff788e58485413aac89d7672&oe=5E889C1A",
+            "url": "https://www.facebook.com/marketplace/item/2567578670138364/"
+        },
+        {
+            "title": "Brown Bookshelf",
+            "price": "$40",
+            "img": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-0/c0.169.1504.1504a/s261x260/79588187_10215783039915576_2752209820596568064_o.jpg?_nc_cat=100&_nc_ohc=mq_EwKwwCkoAQnD63SIQe6LkV2X2QzXbhgIGWFffDyZDjYuw3AsUjqrsw&_nc_ht=scontent-dfw5-2.xx&oh=88087b8bdf19c94e7fce952098b0d99e&oe=5E77A7C9",
+            "url": "https://www.facebook.com/marketplace/item/591058071665992/"
+        },
+        {
+            "title": "3 Cushion/Tray Bench Ottoman",
+            "price": "$45",
+            "img": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-0/c0.169.1504.1504a/s261x260/80584745_10215783033155407_7285183631247540224_o.jpg?_nc_cat=108&_nc_ohc=lRQaYrC2ejIAQkAEY7Il1U7U4-Pnm2xN1bEBlbpVyfn5y5wEl1Ht2f33Q&_nc_ht=scontent-dfw5-2.xx&oh=f4be134b9881fd63f2700a97a226be9d&oe=5E709449",
+            "url": "https://www.facebook.com/marketplace/item/567885263775782/"
+        }
+    ];
+
+    const list = document.getElementById('list');
+
+    const inner = items2.map(item => template.replace('Title', item.title)
+        .replace('img_src', item.img)
+        .replace('price', item.price)
+        .replace('item_link', item.url))
+        .reduce((p, c) => p + '\n' + c);
+
+    document.getElementById('list').innerHTML = inner;
+</script>
+
 
 </html>
